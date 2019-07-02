@@ -5,20 +5,18 @@ package:
   version: {{ version }}
 
 source:
-  fn: polyline-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/polyline/polyline-{{ version }}.tar.gz
-  md5: b97c57378605c4a856c437569f95a0cb
+  sha256: 7c7f89d09a09c7b6161bdbfb4fd304b186fc7a2060fa4f31cb3f61c646a5c074
 
 build:
-  noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
+    - pip
   run:
     - python
     - six >=1.8.0
@@ -31,7 +29,7 @@ about:
   home: https://github.com/hicsail/polyline
   license: MIT
   license_file: LICENSE
-  summary: "A Python implementation of Google's Encoded Polyline Algorithm Format."
+  summary: "A Python implementation of Google's Encoded Polyline Algorithm Format"
 
 extra:
   recipe-maintainers:
