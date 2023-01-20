@@ -1,35 +1,39 @@
+{% set name = "polyline" %}
 {% set version = "2.0.0" %}
 
 package:
-  name: polyline
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/polyline/polyline-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/polyline-{{ version }}.tar.gz
   sha256: 1492b8fcadc2143f8aedc673d3c6d95df45131f1c62eb8d51c8183b24e771486
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
-    - six >=1.8.0
+    - python >=3.7
 
 test:
   imports:
     - polyline
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/hicsail/polyline
+  home: https://pypi.org/project/polyline/
+  summary: A Python implementation of Google's Encoded Polyline Algorithm Format.
   license: MIT
   license_file: LICENSE
-  summary: A Python implementation of Google's Encoded Polyline Algorithm Format
 
 extra:
   recipe-maintainers:
