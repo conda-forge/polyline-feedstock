@@ -1,13 +1,13 @@
-About polyline
-==============
-
-Home: https://github.com/hicsail/polyline
-
-Package license: MIT
+About polyline-feedstock
+========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/polyline-feedstock/blob/main/LICENSE.txt)
 
-Summary: A Python implementation of Google's Encoded Polyline Algorithm Format
+Home: https://pypi.org/project/polyline/
+
+Package license: MIT
+
+Summary: A Python implementation of Google's Encoded Polyline Algorithm Format.
 
 Current build status
 ====================
