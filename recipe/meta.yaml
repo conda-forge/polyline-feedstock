@@ -1,5 +1,5 @@
 {% set name = "polyline" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/polyline-{{ version }}.tar.gz
-  sha256: 74cb5cea098dddf09d1a5a1f17af9184d371cbf3e9723de0194e530ec39ca1f6
+  sha256: 10541e759c5fd51f746ee304e9af94744089a4055b6257b293b3afd1df64e369
 
 build:
   noarch: python
