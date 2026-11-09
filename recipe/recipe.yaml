@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  version: "2.0.5"
+
+package:
+  name: polyline
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/p/polyline/polyline-${{ version }}.tar.gz
+  sha256: 92deedee05d52918e83cf7607011ba1cc52907932e7228ba6e28f4a0a8c6370d
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=69.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - polyline
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: A Python implementation of Google's Encoded Polyline Algorithm Format.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/polyline/
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
